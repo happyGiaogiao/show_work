@@ -1,4 +1,4 @@
-package com.codercm.bk.ysk;
+package com.codercm.bk;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

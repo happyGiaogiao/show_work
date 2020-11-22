@@ -1,4 +1,4 @@
-package com.yang.ysk.entity;
+package com.codercm.bk.ysk.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

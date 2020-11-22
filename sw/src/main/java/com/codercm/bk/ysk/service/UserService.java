@@ -1,7 +1,7 @@
-package com.yang.ysk.service;
+package com.codercm.bk.ysk.service;
 
-import com.yang.ysk.dao.UserDAO;
-import com.yang.ysk.entity.User;
+import com.codercm.bk.ysk.dao.UserDAO;
+import com.codercm.bk.ysk.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

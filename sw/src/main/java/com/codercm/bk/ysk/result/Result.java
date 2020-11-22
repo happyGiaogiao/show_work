@@ -1,4 +1,4 @@
-package com.yang.ysk.result;
+package com.codercm.bk.ysk.result;
 
 public class Result {
 

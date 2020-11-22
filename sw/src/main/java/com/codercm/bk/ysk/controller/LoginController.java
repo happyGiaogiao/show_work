@@ -1,8 +1,8 @@
-package com.yang.ysk.controller;
+package com.codercm.bk.ysk.controller;
 
-import com.yang.ysk.entity.User;
-import com.yang.ysk.result.Result;
-import com.yang.ysk.service.UserService;
+import com.codercm.bk.ysk.entity.User;
+import com.codercm.bk.ysk.result.Result;
+import com.codercm.bk.ysk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

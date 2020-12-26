@@ -9,11 +9,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class User {
-    private int sid;
+public class Bproject {
+    //pid,username,realname,title,description,cname,content,date
+    private int pid;
     private String username;
-    private String password;
     private String realname;
-    private boolean status;
-    private String avatar;
+    private String title;
+    private String description;
+    private String cname;
+    private String content;
+    private String date;
 }

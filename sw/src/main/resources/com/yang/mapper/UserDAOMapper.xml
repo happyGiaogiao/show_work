@@ -2,9 +2,36 @@
         <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.codercm.bk.ysk.dao.UserDAO">
 <!--登录-->
-<select id="login" resultType="User">
-    select id,username,password from user where username=#{username} and password=#{password}
-</select>
+    <select id="login" resultType="User">
+    select sid,username,password,realname,status,avatar from student where username=#{username} and password=#{password}
+    </select>
+    <select id="mlogin" resultType="admin">
+        select aid,username,password from admin where username=#{username} and password=#{password}
+    </select>
+    <select id="getUser" resultType="User">
+        select * from student
+    </select>
+    <select id="getCourse" resultType="Course">
+        select * from course
+    </select>
+    <update id="statusChange">
+        update student set status=#{status} where username=#{username}
+    </update>
+    <insert id="newCourse">
+        insert into course (cname) values(#{cname})
+    </insert>
+    <delete id="deleteCourse">
+        delete from course where cname=#{cname}
+    </delete>
+    <delete id="deleteProject">
+        delete from project where pid=#{pid}
+    </delete>
+    <insert id="upload2">
+       insert into project (sid,title,description,cname,content,date) values (#{sid},#{title},#{description},#{cname},#{content},#{date})
+    </insert>
+    <update id="upload3">
+        update project set sid=#{sid},title=#{title},description=#{description},cname=#{cname},content=#{content},date=#{date} where pid=#{pid}
+    </update>
     <insert id="SaveFile">
         INSERT INTO t_files
         VALUES (#{id},
@@ -12,4 +39,47 @@
         #{path},#{size},#{type},#{isImg},
         #{downCounts},#{uploadTime},#{userId});
     </insert>
+
+    <select id="getWorkBypage" resultType="Project">
+    select
+    *
+    FROM
+    project order by date desc
+    limit #{page}, #{size}
+    </select>
+    <select id="getoneWork" resultType="Project">
+        select * FROM project where pid=#{pid}
+    </select>
+    <select id="getWorkBypage2" resultType="Bproject">
+        select pid,username,realname,title,description,cname,content,date
+        FROM student,project where student.sid=project.sid
+         order by date desc
+        limit #{page}, #{size}
+    </select>
+    <select id="getWorkBysid" resultType="Project">
+        select
+        *
+        FROM
+        project where sid=#{sid} order by date desc
+        limit #{page}, #{size}
+    </select>
+    <select id="getWorkByCname" resultType="Project">
+        select
+        *
+        FROM
+        project where cname=#{cname} order by date desc
+        limit #{page}, #{size}
+    </select>
+    <select id="getTotal" resultType="java.lang.Long">
+        select count(*) from project;
+    </select>
+    <select id="getTotal2" resultType="java.lang.Long">
+        select count(*) from project where sid=#{sid};
+    </select>
+    <select id="getTotal3" resultType="java.lang.Long">
+        select count(*) from project where cname=#{cname};
+    </select>
+    <update id="insertAvatar">
+        update student set avatar=#{avatar} where username=#{username}
+    </update>
 </mapper>

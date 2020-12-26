@@ -9,11 +9,6 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class User {
-    private int sid;
-    private String username;
-    private String password;
-    private String realname;
-    private boolean status;
-    private String avatar;
+public class CurrentPage {
+    private Integer currentPage;
 }

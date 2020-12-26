@@ -5,15 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class User {
-    private int sid;
-    private String username;
-    private String password;
-    private String realname;
-    private boolean status;
-    private String avatar;
+public class Page {
+    private List<?> data;
+    private  Long total;
+    private int pageSize;
+    private int currentPage;
 }
+
